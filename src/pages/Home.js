@@ -1,6 +1,6 @@
 import React from 'react';
 import isoLogo from '../assets/ISO Badge...jpg';
-import iesaLogo from '../assets/ChatGPT Image Dec 29, 2025, 12_45_05 PM.png';
+import iesaLogo from '../assets/IESA BADGE (2).png';
 
 function Home() {
   return (
