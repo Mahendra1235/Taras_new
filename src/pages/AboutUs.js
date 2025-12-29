@@ -1,7 +1,7 @@
 import React from 'react';
 import FounderImage from '../assets/taras-image.jpg';
-import Iso14001 from '../assets/ISO.jpg';
-import Iso45001 from '../assets/IESA Membership.png';
+// import Iso14001 from '../assets/ISO.jpg';
+// import Iso45001 from '../assets/IESA Membership.png';
 const AboutUs = () => {
   return (
     <section className="about-container">
@@ -24,7 +24,7 @@ const AboutUs = () => {
       </div>
 
       
-<div className="certification-section">
+{/* <div className="certification-section">
   <h2><strong>Certifications</strong></h2>
 
   <div className="certification-item">
@@ -52,7 +52,7 @@ const AboutUs = () => {
       <img src={Iso45001} alt="IESA Membership Certificate" />
     </a>
   </div>
-</div>
+</div> */}
 
 
       <div className="qualities">
