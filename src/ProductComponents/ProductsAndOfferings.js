@@ -1,23 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import FPGA from "../assets/fpga.jpg";
 import RISCV from "../assets/riscv.jpg";
 import IOT from "../assets/iot.jpg";
+import FPGAProductDetail from "./FPGAProductDetail";
+import RISCVProductDetail from "./RISCVProductDetail";
+import IoTProductDetail from "./IOTProductDetail";
 
 function ProductsAndOfferings() {
+  const [activeProduct, setActiveProduct] = useState(null);
+
+   if (activeProduct === "fpga") {
+    return <FPGAProductDetail onBack={() => setActiveProduct(null)} />;
+  }
+
+  if (activeProduct === "riscv") {
+    return <RISCVProductDetail onBack={() => setActiveProduct(null)} />;
+  }
+
+  if (activeProduct === "iot") {
+    return <IoTProductDetail onBack={() => setActiveProduct(null)} />;
+  }
+
   return (
     <section className="home-products" id="products-offerings">
-      <div className="products-header">
-        {/* <h2>Our Products & Offerings</h2> */}
-        {/* <p>
-          Innovative hands-on solutions for students, professionals, and
-          institutions to build real-world skills in electronics, embedded
-          systems, and IoT.
-        </p> */}
-      </div>
-
       <div className="products-grid">
+        {/* FPGA */}
         <div className="product-card">
-          <img src={FPGA} alt="VLSI Training Kits" />
+          <img src={FPGA} alt="Basic FPGA Evaluation Board" />
           <h3>Basic FPGA Evaluation Board</h3>
           <p>
             Explore digital design from RTL to silicon. Our FPGA kits provide
@@ -29,40 +38,50 @@ function ProductsAndOfferings() {
             <li>Hardware prototyping</li>
             <li>Hands-on labs & exercises</li>
           </ul>
-          <span className="learn-more">Explore →</span>
+
+          <span
+            className="learn-more"
+            onClick={() => setActiveProduct("fpga")}
+          >
+            Explore →
+          </span>
         </div>
 
+        {/* RISC-V */}
         <div className="product-card">
-          <img src={RISCV} alt="Embedded Kits" />
+          <img src={RISCV} alt="RISC-V IP Evaluation Board" />
           <h3>RISC-V IP Evaluation Board</h3>
           <p>
             Learn modern processor design and embedded systems programming with
-            our RISC-V boards. Ideal for understanding MCU architectures and
-            software-hardware co-design.
+            our RISC-V boards.
           </p>
           <ul>
             <li>MCU and peripherals integration</li>
             <li>PCB-based real-world applications</li>
             <li>Software-hardware interfacing exercises</li>
           </ul>
-          <span className="learn-more">Explore →</span>
-        </div>
+  <span className="learn-more" onClick={() => setActiveProduct("riscv")}>
+            Explore →
+          </span>
+                  </div>
 
+        {/* IoT */}
         <div className="product-card">
-          <img src={IOT} alt="IoT and AI Hardware Kits" />
+          <img src={IOT} alt="IoT & Edge AI Lab Solutions" />
           <h3>IoT & Edge AI Lab Solutions</h3>
           <p>
-            Deploy IoT and AI at the edge. Build solutions with sensors,
-            accelerators, and vision processing units to solve real-world
-            problems.
+            Deploy IoT and AI at the edge using sensors, accelerators, and vision
+            processing units.
           </p>
           <ul>
             <li>Edge AI inference & deployment</li>
             <li>IoT connectivity & cloud integration</li>
-            <li>Vision, sensor & accelerator based labs</li>
+            <li>Vision & sensor-based labs</li>
           </ul>
-          <span className="learn-more">Explore →</span>
-        </div>
+ <span className="learn-more" onClick={() => setActiveProduct("iot")}>
+            Explore →
+          </span>
+                  </div>
       </div>
     </section>
   );
