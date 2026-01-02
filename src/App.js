@@ -8,6 +8,8 @@ import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
 import SolutionsPage from './pages/SolutionsPage';
 import Team from './pages/Team';
+import TrainingKit from './ProductComponents/TrainingKit';
+import ProductsAndOfferings from './ProductComponents/ProductsAndOfferings';
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
           <Route path='/contactus' element={<ContactUs />} />
           <Route path='/solutions' element={<SolutionsPage />} />
           <Route path='/team' element={<Team />} />
+          <Route path='/training-kits' element={<TrainingKit />} />
+          <Route path='/products-and-offerings' element={<ProductsAndOfferings />} />
         </Routes>
       </main>
       <Footer />

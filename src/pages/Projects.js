@@ -1,5 +1,5 @@
 import React from 'react';
-import '../App.css'; // Make sure this path is correct
+import '../App.css';
 
 const Projects = () => {
   return (

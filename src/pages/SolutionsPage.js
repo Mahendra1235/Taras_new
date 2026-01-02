@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import VLSICoursePage from '../TrainingComponents/VLSICoursePage';
 import AimlCoursePage from '../TrainingComponents/AimlCoursePage';
 import EmbeddedSystemsPage from '../TrainingComponents/EmbeededSystemsPage';
-import Interview from '../ProductComponents/Interview';
-import TrainingKit from '../ProductComponents/TrainingKit';
+// import Interview from '../ProductComponents/Interview';
+// import TrainingKit from '../ProductComponents/TrainingKit';
 import MenuTabs from './MenuTab';
 import COEPage from './COEPage';
 import Projects from './Projects';
@@ -12,10 +12,11 @@ import Projects from './Projects';
 import vlsi from '../assets/vlsi.jpg';
 import embeddedsystems from '../assets/embeeded systems.jpg';
 import aiml from '../assets/AI-ML Course Img...png';
-import trainingkit from '../assets/training kit.jpg';
-import interview from '../assets/interview.jpg';
+// import trainingkit from '../assets/training kit.jpg';
+// import interview from '../assets/interview.jpg';
 import COE from '../assets/COE1.jpg';
 import projectsImg from '../assets/ComingSoon.png';
+import ProductsAndOfferings from '../ProductComponents/ProductsAndOfferings';
 
 const data = {
   training: [
@@ -41,22 +42,22 @@ const data = {
       component: AimlCoursePage,
     },
   ],
-  products: [
-    {
-      key: 'trainingkit',
-      title: 'Training Kits',
-      description: 'Hands-on kits for real-time embedded and VLSI learning.',
-      image: trainingkit,
-      component: TrainingKit,
-    },
-    {
-      key: 'interviewprep',
-      title: 'Skill Building & Guidance',
-      description: 'Mock interviews, aptitude, and domain-specific prep.',
-      image: interview,
-      component: Interview,
-    },
-  ],
+  // products: [
+  //   {
+  //     key: 'trainingkit',
+  //     title: 'Training Kits',
+  //     description: 'Hands-on kits for real-time embedded and VLSI learning.',
+  //     image: trainingkit,
+  //     component: TrainingKit,
+  //   },
+  //   {
+  //     key: 'interviewprep',
+  //     title: 'Skill Building & Guidance',
+  //     description: 'Mock interviews, aptitude, and domain-specific prep.',
+  //     image: interview,
+  //     component: Interview,
+  //   },
+  // ],
   coe: [
     {
       key: 'coemain',
@@ -96,26 +97,36 @@ function SolutionsPage() {
     );
   }
 
-  return (
-    <div className="solutions-container">
-      <h1 className="solutions-title">Our Solutions</h1>
-      <MenuTabs
-        activeTab={activeTab}
-        onTabChange={(key) => {
-          setActiveTab(key);
-          setSelectedCourseKey(null);
-        }}
-      />
+ return (
+  <div className="solutions-container">
+    <h1 className="solutions-title">Our Solutions</h1>
 
+    <MenuTabs
+      activeTab={activeTab}
+      onTabChange={(key) => {
+        setActiveTab(key);
+        setSelectedCourseKey(null);
+      }}
+    />
+
+    {/* PRODUCTS TAB → SHOW PRODUCTS & OFFERINGS */}
+    {activeTab === 'products' && (
+      <ProductsAndOfferings />
+    )}
+
+    {/* OTHER TABS → SHOW COURSE CARDS */}
+    {activeTab !== 'products' && (
       <div className="course-grid">
         {currentCourses.map(({ key, title, description, image }) => (
           <div key={key} className="course-card">
             <div className="card-image">
               <img src={image} alt={title} />
             </div>
+
             <div className="card-content">
               <h3>{title}</h3>
               <p>{description}</p>
+
               <button
                 className="explore-btn"
                 onClick={() => setSelectedCourseKey(key)}
@@ -126,8 +137,10 @@ function SolutionsPage() {
           </div>
         ))}
       </div>
-    </div>
-  );
+    )}
+  </div>
+);
+
 }
 
 export default SolutionsPage;
