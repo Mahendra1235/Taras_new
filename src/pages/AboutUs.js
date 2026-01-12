@@ -7,11 +7,13 @@ const AboutUs = () => {
     <section className="about-container">
       <h1>About Us</h1>
       <p>
-        At TARAS SYSTEMS AND SOLUTIONS, we specialize in cutting-edge product development and skill enhancement in core engineering domains. Our mission is to bridge the gap between emerging technologies and real-world applications by nurturing next-generation engineers and developing future-ready solutions.
+        TARAS Systems and Solutions is a technology-driven company specializing in advanced product development and engineering solutions. We design and build future-ready systems by transforming innovative ideas into real-world applications.
+
       </p>
       <p>
-        Over the past six years, we have collaborated with universities and industries to drive innovation through domain-specific R&D, hands-on technical mentorship, and advanced lab setups in areas like VLSI, FPGA, IoT, AI, Cloud Computing, RISC‑V, Embedded Systems, and Robotics.
-      </p>
+With over six years of experience, we work across domains such as VLSI, FPGA, Embedded Systems, RISC-V, IoT, AI, Cloud Computing, and Robotics, delivering scalable and reliable solutions through focused R&D and hands-on engineering.
+
+We also collaborate with academic institutions to provide industry-grade exposure through real product development environments, contributing to the growth of skilled, industry-ready engineers—while remaining firmly rooted as a product and technology solutions company.      </p>
 
       <div className="founder">
         <div className="founder-content">
