@@ -70,7 +70,7 @@ function Home() {
   <div
     className="float-icon"
     onClick={() => navigate("/vlsi-course")}
-    title="VLSI Course"
+    title="VLSI "
     style={{ cursor: "pointer" }}
   >
     <Cpu size={28} />
@@ -80,7 +80,7 @@ function Home() {
   <div
     className="float-icon"
     onClick={() => navigate("/aiml-course")}
-    title="AI / ML Course"
+    title="Edge AI"
     style={{ cursor: "pointer" }}
   >
     <Brain size={28} />
@@ -90,7 +90,7 @@ function Home() {
   <div
     className="float-icon"
     onClick={() => navigate("/embedded-systems")}
-    title="Embedded Systems Course"
+    title="Embedded Systems"
     style={{ cursor: "pointer" }}
   >
     <CircuitBoard size={28} />
