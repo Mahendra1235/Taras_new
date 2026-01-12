@@ -8,18 +8,19 @@
 
 /*Header*/
 .navbar {
-background: linear-gradient(
+/* background: linear-gradient(
   to right,
   rgba(10, 27, 44, 0.9),
   rgba(17, 34, 68, 0.7),
   rgba(35, 69, 103, 0.9)
-), url('../src/assets/Bg2.jpg');
+), url('../src/assets/Bg2.jpg'); */
+  background-color:rgba(15, 15, 15, 0.952);
   padding: 0.2rem 5rem;
   font-family: 'Segoe UI', sans-serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: auto;
+  height: 15vh;
 }
 
 
@@ -33,13 +34,13 @@ background: linear-gradient(
 
 .menu > li {
   position: relative;
-  color: white;
+  color: blue;
   cursor: pointer;
 }
 
 .menu > li > a {
   text-decoration: none;
-  color: white;
+color:white;
   font-size: 20px;
   font-weight: bolder;
   transition: color 0.3s;
@@ -114,18 +115,29 @@ hr {
 }
 
 .logo {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  height: 90px;
-  width: auto;
+  height: 130px;   /* increase from 90px */
+  width: 350px;
+  padding: 10px 0;
+  padding-top: 30px;
 }
 
+
 /*Homepage*/
-.home {
+/* .home {
   background-image: url('./assets/Bg2.jpg');
   background-size: cover;
   background-position: center;
   min-height: 70vh;
+  position: relative;
+  color: white;
+  font-family: Arial, sans-serif;
+} */
+
+.home {
+  background-image: url('./assets/Bg2.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 90vh;
   position: relative;
   color: white;
   font-family: Arial, sans-serif;
@@ -136,7 +148,7 @@ hr {
   top: 5%;
   left: 5%;
   transform: none;
-  max-width: 700px;
+  max-width: 1000px;
   text-align: left;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
   background: rgba(0, 0, 0, 0.4);
@@ -144,9 +156,26 @@ hr {
   border-radius: 12px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
+
+.overlay-text h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+.overlay-text .highlight-text {
+  color: #e30b17;
+}
+
+.overlay-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  opacity: 0.95;
+}
 .home-products {
-  padding: 0px;
-  background: #f7f7f7;
+  padding: 40px;
+  background: white;
   font-family: 'Poppins', Arial, sans-serif;
 }
 
@@ -172,7 +201,7 @@ hr {
 
 .products-grid {
   display: flex;
-  padding-top: 60px;
+  padding-top: 10px;
   gap: 50px;
   flex-wrap: wrap;
   justify-content: center;
@@ -180,8 +209,8 @@ hr {
 }
 
 .product-card {
-  background: #fff;
-  border-radius: 20px;
+  background: #9c9b9b;
+  border-radius: 40px;
   width: 400px;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -214,7 +243,7 @@ hr {
   padding: 0 20px 16px;
   color: #555;
   font-size: 15px;
-  line-height: 1.6;
+  line-height: 1;
 }
 
 .product-card ul {
@@ -271,7 +300,7 @@ hr {
   font-weight: 600;
   border: none;
   border-radius: 30px;
-  background: #e30b17; /* Raspberry Pi red */
+  background: #e30b17;
   color: #fff;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -282,32 +311,80 @@ hr {
   box-shadow: 0 8px 20px rgba(227, 11, 23, 0.3);
 }
 
+/* Floating Icons */
+.floating-icons {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.float-icon {
+  background: rgba(235, 85, 85, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.zs ease, box-shadow 0.3 ease;
+  animation: float 6s ease-in-out infinite;
+}
+
+.float-icon:nth-child(2) {
+  animation-delay: -2s;
+}
+
+.float-icon:nth-child(3) {
+  animation-delay: -4s;
+}
+
+.float-icon:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateX(-5px);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
 /* ===============================
    TECHNOLOGY SOLUTIONS SECTION
 ================================ */
 .tech-solutions {
-  padding: 80px 6%;
+  padding: 20px 6%;
+  border-radius: 50px;
   background: linear-gradient(180deg, #0b1538 0%, #0a1e4d 100%);
   color: #ffffff;
   text-align: center;
 }
 
-.tech-solutions h2 {
+.section-header {
+  margin-bottom: 50px;
+}
+
+.section-header h2 {
   font-size: 32px;
   font-weight: 700;
-  margin-bottom: 50px;
   letter-spacing: 0.5px;
 }
 
-/* GRID */
 .tech-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 40px;
-  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 60px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-/* CARD */
 .tech-card {
   position: relative;
   border-radius: 18px;
@@ -325,7 +402,7 @@ hr {
 
 .tech-card img {
   width: 100%;
-  height: 200px;
+  height: 280px;
   object-fit: cover;
   display: block;
   transition: transform 0.6s ease;
@@ -335,36 +412,45 @@ hr {
   transform: scale(1.08);
 }
 
-/* OVERLAY */
 .tech-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.15),
-    rgba(0, 0, 0, 0.85)
-  );
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.85));
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 20px;
+  padding: 24px;
+}
+
+.tech-icon {
+  width: 50px;
+  height: 50px;
+  background: rgba(227, 11, 23, 0.9);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
 }
 
 .tech-overlay h3 {
   font-size: 22px;
   font-weight: 600;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
-.tech-overlay span {
+.explore-link {
   font-size: 14px;
   color: #9ecbff;
   font-weight: 500;
   letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.tech-card:hover .tech-overlay span {
+.tech-card:hover .explore-link {
   color: #ffffff;
   transform: translateX(6px);
 }
@@ -386,7 +472,7 @@ hr {
 
 /* CERTIFICATIONS SECTION */
 .certifications-section {
-  position: relative; /* IMPORTANT */
+  position: relative;
   z-index: 2;
   margin-top: 40px;
   padding: 10px 20px;
@@ -403,36 +489,41 @@ hr {
   padding: 40px 30px;
   width: 820px;
   text-align: center;
-  display: flex;                /* 🔥 important */
+  display: flex;
   flex-direction: column;
-  align-items: center;          /* 🔥 centers badge + text */
+  align-items: center;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
   transition: transform 0.3s ease;
 }
-
-.cert-card img {
-  display: block;               /* remove inline behavior */
-  margin: 0 auto 10px;          /* center horizontally */
-  max-width: 340px;
-  height: 200px;
-}
-
-/* .iesa-img {
-  max-width: 320px;   
-  padding-top: 55px;  
-  max-height: 700px;        
-} */
-
 
 .cert-card:hover {
   transform: translateY(-6px);
 }
 
-/* .cert-card img {
-  max-width: 240px;
-  height: auto;
+.cert-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 20px;
-} */
+}
+
+.cert-icon.blue {
+  background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+}
+
+.cert-icon.green {
+  background: linear-gradient(135deg, #15803d, #22c55e);
+}
+
+.cert-card img {
+  display: block;
+  margin: 0 auto 10px;
+  max-width: 340px;
+  height: 200px;
+}
 
 .iso-text {
   color: #1d4ed8;
@@ -593,7 +684,7 @@ background-size: cover;
   padding: 2rem 1.5rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #222;
-  background-color: #f5f9fc;
+  background-color: white;
   line-height: 1.8;
 }
 
@@ -662,61 +753,222 @@ background-size: cover;
   object-fit: cover;
 }
 
+/* ================================
+   Vision & Mission Section
+================================ */
+
 .vision-mission {
+  padding: 100px 0%;
+  background:white;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 80px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ================================
+   Section Titles (Shared)
+================================ */
+
+.vision-mission .section-title {
   display: flex;
-  flex-wrap: wrap;
-  gap: 3rem;
-  margin-top: 2.5rem;
-  padding: 4rem 1rem; /* adds spacing around the section */
-  background-color: #f8f9fa; /* subtle background to separate from other sections */
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 40px;
 }
 
-.vision, .mission {
-  flex: 1 1 45%;
-  min-width: 280px;
-  background: #ffffff;
-  padding: 2rem;
-  border-left: 6px solid #004080; /* slightly thicker accent */
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* softer, more modern shadow */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* smooth hover effect */
-}
-
-/* Hover effect */
-.vision:hover, .mission:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-.vision h3, .mission h3 {
-  font-size: 1.8rem;
-  color: #004080;
-  margin-bottom: 1rem;
+.vision-mission .section-title h3 {
+  font-size: 40px;
   font-weight: 700;
 }
 
-.vision p, .mission ul li {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #333333;
-  margin-bottom: 0.8rem;
+/* Title icon */
+.vision-mission .title-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.vision p strong {
-  color: #004080;
+/* ================================
+   VISION (LEFT SIDE)
+================================ */
+
+.vision {
+  background: linear-gradient(135deg, #020617, #0b1538);
+  color:  white;
+  border-radius: 28px;
+  padding: 50px;
+  box-shadow: 0 20px 50px rgba(2, 6, 23, 0.45);
+}
+.vision .title-icon {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ff4d4d;
 }
 
-.vision-mission ul {
-  padding-left: 1.5rem;
-  list-style-type: disc;
+.vision h3 {
+  color: #c11c1c;
+  border-bottom: 2px solid white;
 }
 
-@media screen and (max-width: 768px) {
-  .vision, .mission {
-    flex: 1 1 100%;
+.vision-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.vision-card {
+  display: flex;
+  gap: 20px;
+  padding: 28px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vision-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+}
+
+.vision-icon {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  background: #fdecec;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e30b17;
+}
+
+.vision-content h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0b1538;
+  margin-bottom: 6px;
+}
+
+.vision-content p {
+  font-size: 15px;
+  color: #5b5f6a;
+  line-height: 1.7;
+}
+
+/* ================================
+   MISSION (RIGHT SIDE)
+================================ */
+
+.mission {
+  background: linear-gradient(135deg, #020617, #0b1538);
+  color:  white;
+  border-radius: 28px;
+  padding: 50px;
+  box-shadow: 0 20px 50px rgba(2, 6, 23, 0.45);
+}
+
+.mission .title-icon {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ff4d4d;
+}
+
+.mission h3 {
+  color: #c11c1c;
+  border-bottom: 2px solid white;
+}
+
+.mission-box ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.mission-box li {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.mission-number {
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  background: #7a1020;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.mission-box p {
+  font-size: 16px;
+  color: #d1d5db;
+  line-height: 1.7;
+}
+
+/* ================================
+   Responsive
+================================ */
+
+@media (max-width: 900px) {
+  .vision-mission {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .mission {
+    padding: 40px;
   }
 }
+.cta-section {
+  padding: 80px 6%;
+  background: linear-gradient(135deg, #0b1538 0%, #1e3a5f 100%);
+  text-align: center;
+  color: white;
+}
 
+.cta-section h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.cta-section p {
+  font-size: 18px;
+  opacity: 0.9;
+  margin-bottom: 32px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-btn {
+  padding: 16px 40px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 30px;
+  background: #e30b17;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(227, 11, 23, 0.4);
+}
 
 /* ContactUs page */
 .contact-page {
@@ -724,7 +976,7 @@ background-size: cover;
   background: linear-gradient(to right, #f0f4f8, #eaf1f8);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #003366;
-  padding: 1rem;
+  padding: 0.5rem;
   background-color: #fff;
   min-height: 100%;
 }
@@ -736,6 +988,42 @@ background-size: cover;
   border-bottom: 3px solid #003366;
   display: inline-block;
 }
+
+.credentials-header {
+  text-align: center;
+  margin: 90px auto 50px;
+  max-width: 700px;
+}
+
+.credentials-header h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #0b1538;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 12px;
+}
+
+/* Accent underline */
+.credentials-header h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 4px;
+  background: linear-gradient(90deg, #e30b17, #ff4757);
+  border-radius: 4px;
+}
+
+.credentials-header p {
+  margin-top: 16px;
+  font-size: 16px;
+  color: #5b5f6a;
+  line-height: 1.6;
+}
+
 
 .contact-container {
   display: flex;
@@ -902,8 +1190,8 @@ h1 {
 /* Solution page */
 
 .solutions-container {
-  padding-bottom: 50px;
-  min-height: 100vh;
+  /* min-height: 100vh; */
+  height: 85vh;
 }
 
 .solutions-title {
@@ -1428,7 +1716,7 @@ h1 {
   transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
-    border-bottom: 8px solid #004080;
+  border-bottom: 8px solid #004080;
 
 }
 
@@ -1440,7 +1728,6 @@ h1 {
   left: 0;
   height: 6px;
   width: 100%;
-  /* background: linear-gradient(90deg, #003366, #457b9d); */
 }
 
 .team-card:hover {

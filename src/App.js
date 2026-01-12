@@ -10,6 +10,9 @@ import SolutionsPage from './pages/SolutionsPage';
 import Team from './pages/Team';
 import TrainingKit from './ProductComponents/TrainingKit';
 import ProductsAndOfferings from './ProductComponents/ProductsAndOfferings';
+import VLSICoursePage from './TrainingComponents/VLSICoursePage';
+import AimlCoursePage from './TrainingComponents/AimlCoursePage';
+import EmbeddedSystemsPage from './TrainingComponents/EmbeededSystemsPage';
 
 function App() {
   return (
@@ -24,6 +27,10 @@ function App() {
           <Route path='/team' element={<Team />} />
           <Route path='/training-kits' element={<TrainingKit />} />
           <Route path='/products-and-offerings' element={<ProductsAndOfferings />} />
+          <Route path="/vlsi-course" element={<VLSICoursePage />} />
+<Route path="/aiml-course" element={<AimlCoursePage />} />
+<Route path="/embedded-systems" element={<EmbeddedSystemsPage />} />
+
         </Routes>
       </main>
       <Footer />
