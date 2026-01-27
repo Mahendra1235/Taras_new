@@ -1,35 +1,77 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Logo from '../assets/Logo-new.png';
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const closeMenu = () => setIsMenuOpen(false);
 
   return (
     <nav className="navbar">
+      {/* Logo */}
       <div className="logo-container">
-        <Link to="/">
+        <NavLink to="/" onClick={closeMenu}>
           <img src={Logo} alt="Company Logo" className="logo" />
-        </Link>
+        </NavLink>
       </div>
 
-      {/* Hamburger icon */}
-      <div className="hamburger" onClick={toggleMenu}>
+      {/* Hamburger */}
+      <div className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
         <span className="bar"></span>
         <span className="bar"></span>
         <span className="bar"></span>
       </div>
 
-      {/* Menu list */}
+      {/* Navigation */}
       <ul className={`menu ${isMenuOpen ? 'open' : ''}`}>
-        <li><Link to="/aboutus" onClick={() => setIsMenuOpen(false)}>About Us</Link></li>
-        <li><Link to="/solutions" onClick={() => setIsMenuOpen(false)}>Solutions</Link></li>
-        <li><Link to="/team" onClick={() => setIsMenuOpen(false)}>Team</Link></li>
-        <li><Link to="/contactus" onClick={() => setIsMenuOpen(false)}>Contact Us</Link></li>
+        <li>
+          <NavLink
+            to="/aboutus"
+            className={({ isActive }) =>
+              isActive ? 'nav-link active' : 'nav-link'
+            }
+            onClick={closeMenu}
+          >
+            About Us
+          </NavLink>
+        </li>
+
+        <li>
+          <NavLink
+            to="/solutions"
+            className={({ isActive }) =>
+              isActive ? 'nav-link active' : 'nav-link'
+            }
+            onClick={closeMenu}
+          >
+            Solutions
+          </NavLink>
+        </li>
+
+        <li>
+          <NavLink
+            to="/team"
+            className={({ isActive }) =>
+              isActive ? 'nav-link active' : 'nav-link'
+            }
+            onClick={closeMenu}
+          >
+            Team
+          </NavLink>
+        </li>
+
+        <li>
+          <NavLink
+            to="/contactus"
+            className={({ isActive }) =>
+              isActive ? 'nav-link active' : 'nav-link'
+            }
+            onClick={closeMenu}
+          >
+            Contact Us
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );

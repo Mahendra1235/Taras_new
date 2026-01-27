@@ -219,12 +219,7 @@ function Home() {
   <ArrowRight size={18} />
 </button>
 
-      </section>
-
-      {/* Footer */}
-      <footer className="footer">
-        <p>© 2026 Electronics Training Solutions. All rights reserved.</p>
-      </footer>
+      </section>      
     </>
   );
 }

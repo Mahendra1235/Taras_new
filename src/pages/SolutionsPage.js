@@ -36,7 +36,7 @@ const data = {
     },
     {
       key: 'aiml',
-      title: 'AI/ML Foundations',
+      title: 'Edge AI',
       description: 'Covers Python, ML algorithms, and deployment pipelines.',
       image: aiml,
       component: AimlCoursePage,
@@ -99,8 +99,10 @@ function SolutionsPage() {
 
  return (
   <div className="solutions-container">
-    <h1 className="solutions-title">Our Solutions</h1>
+    {/* <h1 className="solutions-title">Our Solutions</h1> */}
 
+     {/* CENTERED TAB MENU */}
+  <div className="solutions-tabs-wrapper">
     <MenuTabs
       activeTab={activeTab}
       onTabChange={(key) => {
@@ -108,6 +110,7 @@ function SolutionsPage() {
         setSelectedCourseKey(null);
       }}
     />
+  </div>
 
     {/* PRODUCTS TAB → SHOW PRODUCTS & OFFERINGS */}
     {activeTab === 'products' && (

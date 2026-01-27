@@ -12,7 +12,7 @@ const teamMembers = [
 
 {
     name: 'Venkatesh Rajakutti',
-    role: 'VLSI, Software & AI/ML',
+    role: 'VLSI, Software & Edge AI',
     image: VenkateshProfile,
     bio: 'VLSI & software expert with 13+ years of experience in RTL design, UVM, Verilog/SystemVerilog, and semiconductor protocols. Skilled in C/C++, Java, Python, and AI/ML with 580+ real-time projects. Trained 6000+ students and led 60+ academic programs.'
   },
