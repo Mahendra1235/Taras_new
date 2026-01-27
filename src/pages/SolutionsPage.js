@@ -134,7 +134,7 @@ function SolutionsPage() {
                 className="explore-btn"
                 onClick={() => setSelectedCourseKey(key)}
               >
-                Explore
+                    Explore →
               </button>
             </div>
           </div>

@@ -66,7 +66,6 @@ background-color: #003366;
     background 0.25s ease;
 }
 
-/* Hover – subtle red tint instead of white */
 .nav-link:hover {
   color: var(--text-light);
   background: rgba(227, 11, 23, 0.12);
@@ -323,17 +322,20 @@ hr {
   margin-left: 20px;
   margin-top: 20px;
   font-size: 0.9rem;
-  border-radius: 6px;
+  border-radius: 16px;
   transition: background-color 0.3s;
 }
 
 .learn-more:hover {
-  background-color: #218838;
+    color: white;
+  background-color: rgb(88, 88, 132);
+  
 }
 
 .product-card:hover h3,
-.product-card:hover .learn-more {
+.product-card:hover  {
   color: rgb(88, 88, 132);
+  
 }
 
 .product-card:hover {
@@ -1688,7 +1690,7 @@ h1 {
   color: white;
   padding: 8px 14px;
   font-size: 0.9rem;
-  border-radius: 6px;
+  border-radius: 16px;
   transition: background-color 0.3s;
 }
 
