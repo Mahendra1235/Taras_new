@@ -17,6 +17,7 @@ import aiml from '../assets/AI-ML Course Img...png';
 import COE from '../assets/COE1.jpg';
 import projectsImg from '../assets/ComingSoon.png';
 import ProductsAndOfferings from '../ProductComponents/ProductsAndOfferings';
+import { RiSortNumberDesc } from 'react-icons/ri';
 
 const data = {
   training: [
@@ -30,7 +31,7 @@ const data = {
     {
       key: 'embedded',
       title: 'Embedded Systems',
-      description: 'Intro to Embedded C, IoT hardware interfacing, and real-time OS.',
+      description: 'Intro to Embedded C, IoT hardware interfacing, and real-time OS, Using Embedded C, ARM ,IOT and RTOS' ,
       image: embeddedsystems,
       component: EmbeddedSystemsPage,
     },
@@ -129,7 +130,6 @@ function SolutionsPage() {
             <div className="card-content">
               <h3>{title}</h3>
               <p>{description}</p>
-
               <button
                 className="explore-btn"
                 onClick={() => setSelectedCourseKey(key)}

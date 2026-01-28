@@ -78,19 +78,44 @@ const ContactUs = () => {
             </div>
           </div>
 
-          <div className="info-item">
-            <span className="icon location-icon" aria-label="address">&#9873;</span>
-            <div>
-              <strong>Address:</strong><br />
-              177/1, Sameem Garden
-              <br />
-              Dhanasri Garden, Sundakkamuthur,
-              <br />
-              Coimbatore,
-              <br />
-              Tamil Nadu - 641 010.
-            </div>
-          </div>
+         <div className="info-item">
+  <span className="icon location-icon" aria-label="address">&#9873;</span>
+
+  <div>
+    <strong>Address:</strong>
+
+    <div className="address-grid">
+
+      <div className="address-block">
+        <span className="address-tag">Head Office</span><br/>
+        177/1, Sameem Garden<br />
+        Dhanasri Garden, Sundakkamuthur,<br />
+        Coimbatore,<br />
+        Tamil Nadu - 641010
+      </div>
+
+      <div className="address-block">
+        <span className="address-tag">Branch Office</span><br/>
+        IndiQube Rivera,<br/>
+        VR Ramanathan Rd,<br />
+        Mukta Gardens, Egmore<br />
+        Chennai,<br />
+        Tamil Nadu - 600031
+      </div>
+
+      <div className="address-block">
+        <span className="address-tag">Innovation Center</span><br/>
+        KIADB plot#8,
+        1st cross, <br/>
+        Sadaramangala road, Mahadevapura post,<br/>
+        Bengaluru,<br />
+        Karnataka - 560048
+      </div>
+
+    </div>
+  </div>
+</div>
+
         </div>
 
         <form className="contact-form card" onSubmit={handleSubmit} noValidate>
