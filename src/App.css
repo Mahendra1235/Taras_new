@@ -766,6 +766,30 @@ hr {
   max-width: 340px;
   height: 200px;
 }
+.cert-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* space between icon and text */
+  background-color: rgba(64, 0, 12, 0.85); /* dark semi-transparent */
+  padding: 6px 16px;
+  border-radius: 50px; /* pill shape */
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.cert-badge svg {
+  width: 16px;
+  height: 16px;
+  color: #ffffff;
+}
+
+.cert-badge:hover {
+  background-color: rgb(119, 212, 68);
+}
+
+
 
 .iso-text {
   color: #1d4ed8;
