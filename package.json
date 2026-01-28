@@ -20,7 +20,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "CI=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -43,6 +43,7 @@
     ]
   },
   "devDependencies": {
-    "ajv": "^7.2.4"
+    "ajv": "^8.17.1",
+    "ajv-keywords": "^5.1.0"
   }
 }
