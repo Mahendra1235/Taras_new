@@ -96,7 +96,7 @@ const ContactUs = () => {
 
       <div className="address-block">
         <span className="address-tag">Branch Office</span><br/>
-        IndiQube Rivera,<br/>
+          3rd Floor-<br/>IndiQube Rivera,<br/>
         VR Ramanathan Rd,<br />
         Mukta Gardens, Egmore<br />
         Chennai,<br />

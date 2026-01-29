@@ -1925,7 +1925,7 @@ h1 {
 
 .card-image img {
   width: 100%;
-  height: 120%;
+  height: 100%;
   object-fit: cover; 
 }
 
@@ -1935,7 +1935,7 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
+  height: 50%;
   font-size: 0.95rem;
 }
 
@@ -2108,7 +2108,133 @@ h1 {
     padding: 10px 0;
   }
 }
+/* ===============================
+   PREMIUM ACADEMIC MARQUEE
+================================ */
 
+/* Main container */
+.about-images-marquee {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 3rem 0;
+  margin-bottom: 5rem;
+
+  /* Tech background image */
+  background: url('../src/assets/Bg2.jpg');
+
+  border-radius: 6px;
+}
+
+/* Glass + gradient overlay */
+.about-images-marquee::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  /* background: linear-gradient(
+    to right,
+    rgba(10, 27, 44, 0.85),
+    rgba(17, 34, 68, 0.75),
+    rgba(10, 27, 44, 0.85)
+  ); */
+  backdrop-filter: blur(8px);
+  z-index: 1;
+}
+.course-grid-h1 {
+
+  text-align: center;
+  padding: 1.4rem 8rem;
+  margin: 3rem auto 2rem;
+  width: fit-content;
+
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+
+  color: #ffffff;
+
+  /* Gradient background */
+  background: linear-gradient(
+    135deg,
+    #003366,
+    #004b8d,
+    #003366
+  );
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 10px 30px rgba(0, 51, 102, 0.35),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+
+  position: relative;
+}
+
+/* Decorative underline glow */
+.course-grid-h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 3px;
+
+  background: linear-gradient(
+    to right,
+    transparent,
+    #00bcd4,
+    transparent
+  );
+
+  border-radius: 4px;
+  opacity: 0.8;
+}
+
+/* Image track */
+.about-images-track {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  animation: scrollRight 8s linear infinite;
+}
+
+/* Individual logo card */
+.about-extra-image {
+  width: 200px;
+  height: auto;
+  padding: 12px;
+
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.9);
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.25),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+/* Hover effect */
+.about-extra-image:hover {
+  transform: translateY(-6px) scale(1.07);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* Smooth scrolling animation */
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 
 /*Course detail container*/
 
