@@ -10,11 +10,24 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
+// const transporter = nodemailer.createTransport({
+//   service: "gmail",
+//   auth: {
+//     user: process.env.EMAIL_USER,    
+//     pass: process.env.EMAIL_PASS,     
+//   },
+// });
+
 const transporter = nodemailer.createTransport({
-  service: "gmail",
+  host: "smtp.office365.com",
+  port: 587,
+  secure: false, // MUST be false for 587
   auth: {
-    user: process.env.EMAIL_USER,    
-    pass: process.env.EMAIL_PASS,     
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS, // App Password
+  },
+  tls: {
+    rejectUnauthorized: false,
   },
 });
 
@@ -80,19 +93,35 @@ function createHtmlContent(data) {
 app.post("/send-enquiry", async (req, res) => {
   const { name, email, phone, message, product } = req.body;
 
+  // const mailOptions = {
+  //   from: email,
+  //   to: process.env.RECEIVER_EMAIL_ENQUIRY,
+  //   subject: `New Enquiry for ${product}`,
+  //   html: createHtmlContent({
+  //     title: "New Product Enquiry",
+  //     name,
+  //     email,
+  //     phone,
+  //     product,
+  //     message,
+  //   }),
+  // };
+
   const mailOptions = {
-    from: email,
-    to: process.env.RECEIVER_EMAIL_ENQUIRY,
-    subject: `New Enquiry for ${product}`,
-    html: createHtmlContent({
-      title: "New Product Enquiry",
-      name,
-      email,
-      phone,
-      product,
-      message,
-    }),
-  };
+  from: `"Website Enquiry" <${process.env.EMAIL_USER}>`,
+  replyTo: email,
+  to: process.env.RECEIVER_EMAIL_ENQUIRY,
+  subject: `New Enquiry for ${product}`,
+  html: createHtmlContent({
+    title: "New Product Enquiry",
+    name,
+    email,
+    phone,
+    product,
+    message,
+  }),
+};
+
 
   try {
     await transporter.sendMail(mailOptions);

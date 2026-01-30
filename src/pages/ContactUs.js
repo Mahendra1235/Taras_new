@@ -22,7 +22,7 @@ const ContactUs = () => {
     message: e.target.message.value,
   };
 
-  fetch("http://localhost:5000/contact", {
+fetch(`${process.env.REACT_APP_API_URL}/contact`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
